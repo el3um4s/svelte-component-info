@@ -12,4 +12,5 @@ info={infoSvelteComponents['SvelteInfo.svelte']}
 
 ### Test
 
-- [simple-component](./test/simple-component)
+- [Hello.svelte](./test/hello)
+- [Text.svelte](./test/text)
