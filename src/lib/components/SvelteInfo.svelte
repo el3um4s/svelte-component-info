@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
 	export let name: string;
-	export let description: string = '';
+	export let description: string = '-';
 	export let info: SvelteInformations;
 	export let urlPackage: string = '-';
 
@@ -14,11 +14,15 @@
 
 	const bracesOpen: string = '{';
 	const bracesClose: string = '}';
+
+	// function copyToClip(text: string) {
+	// 	navigator.clipboard.writeText(text);
+	// }
 </script>
 
 <section>
 	<h1>{name}</h1>
-	{#if description !== ''}
+	{#if description !== '-'}
 		<div>
 			<i>{description}</i>
 		</div>

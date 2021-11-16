@@ -1,6 +1,6 @@
 {
 	"name": "@el3um4s/svelte-component-info",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Show information about the properties of a Svelte component. Designed to simplify the creation of documentation",
 	"repository": {
 		"type": "git",
@@ -49,7 +49,7 @@
 		"get-info-svelte-components-watcher": "node getInfoSvelteComponents-watcher.js"
 	},
 	"devDependencies": {
-		"@el3um4s/svelte-get-component-info": "^0.0.7",
+		"@el3um4s/svelte-get-component-info": "^0.0.9",
 		"@playwright/test": "^1.16.3",
 		"@sveltejs/kit": "next",
 		"@testing-library/jest-dom": "^5.15.0",
@@ -58,8 +58,8 @@
 		"@types/glob": "^7.2.0",
 		"@types/jest": "^27.0.2",
 		"@types/jest-image-snapshot": "^4.3.1",
-		"@typescript-eslint/eslint-plugin": "^5.3.1",
-		"@typescript-eslint/parser": "^5.3.1",
+		"@typescript-eslint/eslint-plugin": "^5.4.0",
+		"@typescript-eslint/parser": "^5.4.0",
 		"autoprefixer": "^10.4.0",
 		"cross-env": "^7.0.3",
 		"cssnano": "^5.0.10",
@@ -74,9 +74,9 @@
 		"postcss": "^8.3.11",
 		"postcss-load-config": "^3.1.0",
 		"prettier": "^2.4.1",
-		"prettier-plugin-svelte": "^2.4.0",
+		"prettier-plugin-svelte": "^2.5.0",
 		"svelte": "^3.44.1",
-		"svelte-check": "^2.2.8",
+		"svelte-check": "^2.2.9",
 		"svelte-jester": "^2.1.5",
 		"svelte-preprocess": "^4.9.8",
 		"tailwindcss": "^2.2.19",
@@ -87,7 +87,7 @@
 	"type": "module",
 	"dependencies": {
 		"@el3um4s/match": "^0.0.2",
-		"svelte2tsx": "^0.4.8"
+		"svelte2tsx": "^0.4.9"
 	},
 	"funding": [
 		{
