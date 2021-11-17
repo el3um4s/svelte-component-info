@@ -9,21 +9,21 @@
 	export { className as class };
 	$: className = className || '';
 
+	$: name = name || undefined;
+
 	const brackesOpen: string = '<';
 	const brackesClose: string = '>';
 
 	const bracesOpen: string = '{';
 	const bracesClose: string = '}';
-
-	// function copyToClip(text: string) {
-	// 	navigator.clipboard.writeText(text);
-	// }
 </script>
 
 <section>
-	<h1>{name}</h1>
+	{#if name}
+		<h1>{name}</h1>
+	{/if}
 	{#if description !== '-'}
-		<div>
+		<div data-testid="description">
 			<i>{description}</i>
 		</div>
 	{/if}
@@ -33,32 +33,38 @@
 		{#if urlPackage !== '-'}
 			<div>To import the package in a project:</div>
 
-			<div class="code details">npm i -D {urlPackage}</div>
+			<div class="code details" data-testid="urlPackage">npm i -D {urlPackage}</div>
 		{/if}
 
 		<div>To use in a file:</div>
 		<div class="code details">
 			{#if urlPackage !== '-'}
-				<div>
+				<div data-testid="import-code">
 					{brackesOpen}script{brackesClose}
-					<p>import {bracesOpen} {name} {bracesClose} from "{urlPackage}"</p>
+					<p>
+						import {bracesOpen}
+						{name ? name : 'CustomComponent'}
+						{bracesClose} from "{urlPackage}"
+					</p>
 					{brackesOpen}/script{brackesClose}
 				</div>
 			{/if}
 			<div>
 				{brackesOpen}{name}
-				{#each info.props as prop}
-					<ul>
-						<li>{prop.name}</li>
+				{#if info && info.props.length > 0}
+					<ul data-testid="list-of-props">
+						{#each info.props as prop}
+							<li class="list-of-props-name">{prop.name}</li>
+						{/each}{brackesClose}
 					</ul>
-				{/each}{brackesClose}
+				{/if}
 				{brackesOpen}/{name}{brackesClose}
 			</div>
 		</div>
 	</section>
 
-	{#if info.props.length > 0}
-		<section class="details">
+	{#if info && info.props.length > 0}
+		<section class="details" data-testid="table-of-props">
 			<div class="title">Props</div>
 			<div class="table">
 				<span class="table-header">Name</span>
