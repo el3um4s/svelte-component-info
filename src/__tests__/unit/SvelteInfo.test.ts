@@ -14,7 +14,11 @@ const infoSvelteComponents = {
 			{ name: 'label', type: 'string' },
 			{ name: 'jolly' }
 		],
-		actions: [{ name: 'calc' }]
+		actions:[
+			{name:"calc"},
+			{name:"mouse-enter"},
+			{name:"mouse-leave"}
+		]
 	}
 };
 
@@ -94,6 +98,23 @@ describe("should render component in the page", () => {
 		const tableOfProps = svelteInfo.getByTestId("table-of-props");
 		expect(tableOfProps).toBeInTheDocument();
 		expect(tableOfProps).toBeVisible();
+	});
+
+	test('with actions', () => {
+		const svelteInfo = render(SvelteInfo, { name:"Text", urlPackage: "@test-no-exist/hello-svelte", info: infoSvelteComponents['Text.svelte']});
+		
+		const listOfActions = svelteInfo.getByTestId("list-of-actions");
+		expect(listOfActions).toBeInTheDocument();
+		expect(listOfActions).toBeVisible();
+
+		const listOfActionsItems = listOfActions.getElementsByTagName("li");
+		expect(listOfActionsItems.length).toBe(infoSvelteComponents['Text.svelte'].actions.length);
+
+		for (let i = 0; i < listOfActionsItems.length; i++) {
+			const element = listOfActionsItems[i];
+			expect(element).toHaveClass("list-of-actions-name");
+			expect(element).toHaveTextContent(infoSvelteComponents['Text.svelte'].actions[i].name);	
+		};
 	});
 
 })

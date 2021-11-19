@@ -81,12 +81,12 @@
 	{/if}
 
 	{#if info && info.actions.length > 0}
-		<section class="details" data-testid="table-of-props">
-			<div class="title">Actions {info.actions.length}</div>
+		<section class="details" data-testid="list-of-actions">
+			<div class="title">Actions</div>
 			<div class="list-actions">
-				<ul data-testid="list-of-actions">
+				<ul>
 					{#each info.actions as action}
-						<li class="list-of-actions-name">{action.name}</li>
+						<li class="list-of-actions-name">on:<span>{action.name}</span></li>
 					{/each}
 				</ul>
 			</div>
@@ -139,5 +139,9 @@
 		margin-top: -8px;
 		margin-left: -8px;
 		margin-right: -8px;
+	}
+
+	.list-of-actions-name span {
+		@apply font-bold;
 	}
 </style>

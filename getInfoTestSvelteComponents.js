@@ -15,7 +15,6 @@ listFile.forEach(file => {
   const info = getInfo(file);
   const fileName = file.substring(basePath.length);
   infoFiles[fileName] = info;
-  console.log(info);
 });
 
 let data = JSON.stringify(infoFiles);
