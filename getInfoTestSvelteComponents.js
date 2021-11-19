@@ -12,9 +12,10 @@ const listFile = glob.sync(`${basePath}**/*.svelte`);
 
 let infoFiles = {}
 listFile.forEach(file => {
-  const prop = getInfo(file);
+  const info = getInfo(file);
   const fileName = file.substring(basePath.length);
-  infoFiles[fileName] = prop;
+  infoFiles[fileName] = info;
+  console.log(info);
 });
 
 let data = JSON.stringify(infoFiles);

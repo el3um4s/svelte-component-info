@@ -79,6 +79,19 @@
 			</div>
 		</section>
 	{/if}
+
+	{#if info && info.actions.length > 0}
+		<section class="details" data-testid="table-of-props">
+			<div class="title">Actions {info.actions.length}</div>
+			<div class="list-actions">
+				<ul data-testid="list-of-actions">
+					{#each info.actions as action}
+						<li class="list-of-actions-name">{action.name}</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+	{/if}
 </section>
 
 <style lang="postcss">
