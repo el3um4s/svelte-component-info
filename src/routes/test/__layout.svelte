@@ -9,11 +9,15 @@
 </script>
 
 <script lang="ts">
-	import '../app.css';
-	import PageTransition from '../__tests__/components/PageTransition.svelte';
+	import '../../app.css';
+	import GoHome from '../../__tests__/components/GoHome.svelte';
+
+	import PageTransition from '../../__tests__/components/PageTransition.svelte';
 
 	export let key: string;
 </script>
+
+<GoHome />
 
 <PageTransition refresh={key}>
 	<slot />

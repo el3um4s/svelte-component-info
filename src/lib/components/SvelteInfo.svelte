@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Section from './Section.svelte';
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
 	export let name: string;
 	export let description: string = '-';
@@ -28,8 +29,7 @@
 		</div>
 	{/if}
 
-	<section class="details">
-		<div class="title">How to use</div>
+	<Section title="How to use" visible={true}>
 		{#if urlPackage !== '-'}
 			<div>To import the package in a project:</div>
 
@@ -55,17 +55,16 @@
 					<ul data-testid="list-of-props">
 						{#each info.props as prop}
 							<li class="list-of-props-name">{prop.name}</li>
-						{/each}{brackesClose}
+						{/each}
 					</ul>
-				{/if}
+				{/if}{brackesClose}
 				{brackesOpen}/{name}{brackesClose}
 			</div>
 		</div>
-	</section>
+	</Section>
 
 	{#if info && info.props.length > 0}
-		<section class="details" data-testid="table-of-props">
-			<div class="title">Props</div>
+		<Section title="Props" visible={false}>
 			<div class="table">
 				<span class="table-header">Name</span>
 				<span class="table-header">Type</span>
@@ -77,12 +76,11 @@
 					<span class={prop.defaultValue ? '' : 'undefined'}>{prop.defaultValue}</span>
 				{/each}
 			</div>
-		</section>
+		</Section>
 	{/if}
 
 	{#if info && info.actions.length > 0}
-		<section class="details" data-testid="list-of-actions">
-			<div class="title">Actions</div>
+		<Section title="Actions" visible={false}>
 			<div class="list-actions">
 				<ul>
 					{#each info.actions as action}
@@ -90,16 +88,19 @@
 					{/each}
 				</ul>
 			</div>
-		</section>
+		</Section>
 	{/if}
 </section>
 
 <style lang="postcss">
-	section {
-		background-color: var(--background-color, theme('colors.gray.50'));
+	* {
 		color: var(--text-color, theme('colors.gray.800'));
+		background-color: var(--background-color, theme('colors.gray.50'));
 	}
 
+	section {
+		@apply w-full;
+	}
 	.table {
 		@apply grid grid-cols-3;
 	}

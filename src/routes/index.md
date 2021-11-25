@@ -14,3 +14,5 @@ info={infoSvelteComponents['SvelteInfo.svelte']}
 
 - [Hello.svelte](./test/hello)
 - [Text.svelte](./test/text)
+- [PageTransition.svelte](./test/page-transition)
+- [GoHome.svelte](./test/go-home)
