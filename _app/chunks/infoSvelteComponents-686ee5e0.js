@@ -1,1 +1,0 @@
-var e={"Hello.svelte":{props:[],actions:[]},"Text.svelte":{props:[{name:"text",type:"string",defaultValue:"Hello World!"},{name:"counter",type:"number",defaultValue:"0"},{name:"label",type:"string"}],actions:[{name:"calc"},{name:"mouse-enter"},{name:"mouse-leave"}]}};export{e as i};
