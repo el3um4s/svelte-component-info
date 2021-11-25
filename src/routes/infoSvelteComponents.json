@@ -1,1 +1,1 @@
-{"SvelteInfo.svelte":{"props":[{"name":"name","type":"string"},{"name":"description","type":"string","defaultValue":"-"},{"name":"info","type":"SvelteInformations"},{"name":"urlPackage","type":"string","defaultValue":"-"}],"actions":[]}}
+{"SvelteInfo.svelte":{"props":[{"name":"name","type":"string"},{"name":"description","type":"string","defaultValue":"-"},{"name":"info","type":"SvelteInformations"},{"name":"urlPackage","type":"string","defaultValue":"-"}],"actions":[],"slots":[]}}
