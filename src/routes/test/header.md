@@ -4,8 +4,8 @@
 </script>
 
 <SvelteInfo
-name="GoHome"
+name="Header"
 description="A Simple Svelte component."
-urlPackage="@test-no-exist/g--home-svelte"
-info={infoSvelteComponents['GoHome.svelte']}
+urlPackage="@test-no-exist/header-svelte"
+info={infoSvelteComponents['Header.svelte']}
 />
