@@ -11,8 +11,9 @@
 		<link rel="modulepreload" href="/svelte-component-info/_app/start-40377dcb.js">
 		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/vendor-324c65f5.js">
 		<link rel="modulepreload" href="/svelte-component-info/_app/pages/__layout.svelte-350cfe1b.js">
-		<link rel="modulepreload" href="/svelte-component-info/_app/pages/index.md-e6af1b60.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/pages/test/header.md-a02704cc.js">
 		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/SvelteInfo-bc0ca909.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/infoSvelteComponents-ffe199ca.js">
 		<link rel="stylesheet" href="/svelte-component-info/_app/assets/start-464e9d0a.css">
 		<link rel="stylesheet" href="/svelte-component-info/_app/assets/pages/__layout.svelte-4bd60ab2.css">
 		<link rel="stylesheet" href="/svelte-component-info/_app/assets/SvelteInfo-d4ee94dd.css">
@@ -32,11 +33,11 @@
 					error: null,
 					nodes: [
 						import("/svelte-component-info/_app/pages/__layout.svelte-350cfe1b.js"),
-						import("/svelte-component-info/_app/pages/index.md-e6af1b60.js")
+						import("/svelte-component-info/_app/pages/test/header.md-a02704cc.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: "\u002F",
+						path: "\u002Ftest\u002Fheader",
 						query: new URLSearchParams(""),
 						params: {}
 					}
@@ -48,10 +49,10 @@
 		<div id="svelte">
 
 
-<header class="svelte-dkcntm"><div class="svelte-dkcntm"><a href="../" class="svelte-dkcntm invisible">Home</a><a href="https://github.com/el3um4s/svelte-component-info" class="svelte-dkcntm">GitHub</a><a href="https://www.npmjs.com/package/@el3um4s/svelte-component-info" class="svelte-dkcntm">NPM</a></div>
+<header class="svelte-dkcntm"><div class="svelte-dkcntm"><a href="../" class="svelte-dkcntm">Home</a><a href="https://github.com/el3um4s/svelte-component-info" class="svelte-dkcntm">GitHub</a><a href="https://www.npmjs.com/package/@el3um4s/svelte-component-info" class="svelte-dkcntm">NPM</a></div>
 </header>
-<main><div class="main-center"><section class="svelte-x37xha"><h1 class="svelte-x37xha">SvelteInfo</h1>
-	<div data-testid="description" class="svelte-x37xha"><i class="svelte-x37xha">A Svelte Component to show info about Svelte Components</i></div>
+<main><div class="main-center"><section class="svelte-x37xha"><h1 class="svelte-x37xha">Header</h1>
+	<div data-testid="description" class="svelte-x37xha"><i class="svelte-x37xha">A Simple Svelte component.</i></div>
 
 	<section class="svelte-q6ktvg"><div class="header svelte-q6ktvg"><span class="chevron svelte-q6ktvg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" transform="rotate(270)" class="svelte-pwegsn"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></span>
 
@@ -59,19 +60,19 @@
 
 	<div class="content svelte-q6ktvg"><div class="svelte-x37xha">To import the package in a project:</div>
 
-			<div class="code details svelte-x37xha" data-testid="urlPackage">npm i -D @el3um4s/svelte-info</div>
+			<div class="code details svelte-x37xha" data-testid="urlPackage">npm i -D @test-no-exist/header-svelte</div>
 
 		<div class="svelte-x37xha">To use in a file:</div>
 		<div class="code details svelte-x37xha"><div data-testid="import-code" class="svelte-x37xha">&lt;script&gt;
 					<p class="svelte-x37xha">import {
-						SvelteInfo
-						} from &quot;@el3um4s/svelte-info&quot;
+						Header
+						} from &quot;@test-no-exist/header-svelte&quot;
 					</p>
 					&lt;/script&gt;</div>
-			<div class="svelte-x37xha">&lt;SvelteInfo
-				<ul data-testid="list-of-props" class="svelte-x37xha"><li class="list-of-props-name svelte-x37xha">name</li><li class="list-of-props-name svelte-x37xha">description</li><li class="list-of-props-name svelte-x37xha">info</li><li class="list-of-props-name svelte-x37xha">urlPackage</li></ul>
+			<div class="svelte-x37xha">&lt;Header
+				<ul data-testid="list-of-props" class="svelte-x37xha"><li class="list-of-props-name svelte-x37xha">links</li></ul>
 				&gt;
-				&lt;/SvelteInfo&gt;</div></div></div>
+				&lt;/Header&gt;</div></div></div>
 </section>
 
 	<section class="svelte-q6ktvg"><div class="header svelte-q6ktvg"><span class="chevron svelte-q6ktvg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" transform="rotate(90)" class="svelte-pwegsn"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></span>
@@ -82,12 +83,7 @@
 </section>
 
 	
-</section>
-<h3>Test</h3>
-<ul><li><a href="./test/hello">Hello.svelte</a></li>
-<li><a href="./test/text">Text.svelte</a></li>
-<li><a href="./test/page-transition">PageTransition.svelte</a></li>
-<li><a href="./test/header">Header.svelte</a></li></ul></div></main>
+</section></div></main>
 
 
 
