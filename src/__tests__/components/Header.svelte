@@ -7,7 +7,7 @@
 <header>
 	<div>
 		{#each links as { href, label, visible } ({ href })}
-			<a {href} transition:slide={{ duration: 1000 }} class:invisible={!visible} animate:flip
+			<a {href} transition:slide={{ duration: 800 }} class:invisible={!visible} animate:flip
 				>{label}</a
 			>
 		{/each}

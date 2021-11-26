@@ -3,7 +3,7 @@
 	import { quintOut } from 'svelte/easing';
 
 	export let title: string = 'Title';
-	import ChevronRight from './icons/ChevronRight.svelte';
+	import ChevronRight from '../icons/ChevronRight.svelte';
 
 	export let visible = true;
 	let deg: number;

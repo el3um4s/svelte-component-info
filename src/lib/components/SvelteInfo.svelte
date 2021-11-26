@@ -1,5 +1,7 @@
 <script lang="ts">
-	import Section from './Section.svelte';
+	import Section from './helpers/Section.svelte';
+	import CodeBash from './helpers/CodeBash.svelte';
+	import CodeSvelte from './helpers/CodeSvelte.svelte';
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
 	export let name: string;
 	export let description: string = '-';
@@ -11,12 +13,6 @@
 	$: className = className || '';
 
 	$: name = name || undefined;
-
-	const brackesOpen: string = '<';
-	const brackesClose: string = '>';
-
-	const bracesOpen: string = '{';
-	const bracesClose: string = '}';
 </script>
 
 <section>
@@ -32,35 +28,12 @@
 	<Section title="How to use" visible={true}>
 		{#if urlPackage !== '-'}
 			<div>To import the package in a project:</div>
-
-			<div class="code details" data-testid="urlPackage">npm i -D {urlPackage}</div>
+			<CodeBash code="npm i -D {urlPackage}" />
 		{/if}
 
 		<div>To use in a file:</div>
-		<div class="code details">
-			{#if urlPackage !== '-'}
-				<div data-testid="import-code">
-					{brackesOpen}script{brackesClose}
-					<p>
-						import {bracesOpen}
-						{name ? name : 'CustomComponent'}
-						{bracesClose} from "{urlPackage}"
-					</p>
-					{brackesOpen}/script{brackesClose}
-				</div>
-			{/if}
-			<div>
-				{brackesOpen}{name}
-				{#if info && info.props.length > 0}
-					<ul data-testid="list-of-props">
-						{#each info.props as prop}
-							<li class="list-of-props-name">{prop.name}</li>
-						{/each}
-					</ul>
-				{/if}{brackesClose}
-				{brackesOpen}/{name}{brackesClose}
-			</div>
-		</div>
+
+		<CodeSvelte {urlPackage} {name} {info} />
 	</Section>
 
 	{#if info && info.props.length > 0}
@@ -96,6 +69,17 @@
 	* {
 		color: var(--text-color, theme('colors.gray.800'));
 		background-color: var(--background-color, theme('colors.gray.50'));
+
+		/* other colors:
+			--code-bash-background-color
+			--code-bash-text-color
+
+			--code-svelte-background-color
+			--code-svelte-text-color
+			--code-svelte-import
+			--code-svelte-tag
+			--code-svelte-prop
+		 */
 	}
 
 	section {
@@ -117,29 +101,6 @@
 	.table > span.undefined {
 		background-color: var(--text-color, theme('colors.gray.800'));
 		color: var(--background-color, theme('colors.gray.50'));
-	}
-
-	.code {
-		@apply font-mono pl-2;
-	}
-
-	.code li,
-	.code p {
-		@apply pl-8;
-	}
-	.code div {
-		@apply mb-2 mt-2;
-	}
-
-	.details {
-		@apply flex flex-col border border-gray-300 p-2 m-2;
-	}
-
-	.details .title {
-		@apply bg-gray-200 text-gray-800 font-bold;
-		margin-top: -8px;
-		margin-left: -8px;
-		margin-right: -8px;
 	}
 
 	.list-of-actions-name span {
