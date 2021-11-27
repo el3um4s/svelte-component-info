@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import { flip } from 'svelte/animate';
-	export let links = [{ href: '../', label: 'Home', visible: true }];
+	export let links = [{ href: '/', label: 'Home', visible: true }];
 </script>
 
 <header>
