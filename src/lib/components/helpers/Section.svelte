@@ -5,26 +5,20 @@
 	export let title: string = 'Title';
 	import ChevronRight from '../icons/ChevronRight.svelte';
 
-	export let visible = true;
-	let deg: number;
-	$: deg = visible ? 270 : 90;
+	export let open = true;
+	export let onClick = () => {
+		open = !open;
+	};
 </script>
 
 <section>
 	<div class="header">
-		<span class="chevron">
-			<ChevronRight
-				on:click={() => {
-					visible = !visible;
-				}}
-				{deg}
-			/>
-		</span>
+		<ChevronRight {open} {onClick} />
 
 		{title}
 	</div>
 
-	{#if visible}
+	{#if open}
 		<div class="content" transition:slide={{ duration: 400, easing: quintOut }}>
 			<slot />
 		</div>

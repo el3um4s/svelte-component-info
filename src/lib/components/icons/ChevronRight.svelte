@@ -1,19 +1,47 @@
 <script lang="ts">
-	export let deg: string = '90';
+	export let open = false;
+	export let onClick = () => {
+		open = !open;
+	};
+
+	// https://github.com/jmagrippis/svelte-hamburger/blob/main/src/lib/AnimatedHamburger.svelte
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" on:click transform="rotate({deg})">
-	<path
-		fill-rule="evenodd"
-		d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-		clip-rule="evenodd"
-	/>
-</svg>
+<button on:click={onClick}>
+	<svg
+		class:open
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 24 24"
+		fill="none"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		stroke-width="3"
+	>
+		<path d="M19 9l-7 7-7-7" />
+	</svg>
+</button>
 
 <style lang="postcss">
+	:root {
+		--transition-duration: 500ms;
+	}
+
+	button {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	svg {
+		transition: transform var(--transition-duration);
+	}
 	svg {
 		@apply h-6 w-6;
-		fill: var(--background-color, theme('colors.gray.50'));
+		stroke: var(--background-color, theme('colors.gray.50'));
 		background-color: var(--text-color, theme('colors.gray.800'));
+	}
+
+	.open {
+		transform: rotate(180deg);
 	}
 </style>

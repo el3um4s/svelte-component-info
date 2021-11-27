@@ -25,7 +25,7 @@
 		</div>
 	{/if}
 
-	<Section title="How to use" visible={true}>
+	<Section title="How to use" open={true}>
 		{#if urlPackage !== '-'}
 			<div>To import the package in a project:</div>
 			<CodeBash code="npm i -D {urlPackage}" />
@@ -37,7 +37,7 @@
 	</Section>
 
 	{#if info && info.props.length > 0}
-		<Section title="Props" visible={false}>
+		<Section title="Props" open={false}>
 			<div class="table">
 				<span class="table-header">Name</span>
 				<span class="table-header">Type</span>
@@ -53,7 +53,7 @@
 	{/if}
 
 	{#if info && info.actions.length > 0}
-		<Section title="Actions" visible={false}>
+		<Section title="Actions" open={false}>
 			<div class="list-actions">
 				<ul>
 					{#each info.actions as action}
