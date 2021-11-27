@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { SvelteInfo } from '../lib/index';
 	import infoSvelteComponents from './infoSvelteComponents.json';
+	import { base } from '$app/paths';
 </script>
 
 <SvelteInfo
@@ -12,7 +13,7 @@ info={infoSvelteComponents['SvelteInfo.svelte']}
 
 ### Test
 
-- [Hello.svelte](./test/hello)
-- [Text.svelte](./test/text)
-- [PageTransition.svelte](./test/page-transition)
-- [Header.svelte](./test/header)
+- [Hello.svelte]({base}/test/hello)
+- [Text.svelte]({base}/test/text)
+- [PageTransition.svelte]({base}/test/page-transition)
+- [Header.svelte]({base}/test/header)
