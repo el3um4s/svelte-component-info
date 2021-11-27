@@ -1,25 +1,22 @@
 <script lang="ts">
+	import Chevron from '../icons/Chevron.svelte';
+
 	import { slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 
 	export let title: string = 'Title';
-	import ChevronRight from '../icons/ChevronRight.svelte';
-
-	export let open = true;
-	export let onClick = () => {
+	export let open: boolean = true;
+	let onClick = () => {
 		open = !open;
 	};
 </script>
 
 <section>
-	<div class="header">
-		<ChevronRight {open} {onClick} />
-
+	<header>
+		<Chevron {open} {onClick} />
 		{title}
-	</div>
-
+	</header>
 	{#if open}
-		<div class="content" transition:slide={{ duration: 400, easing: quintOut }}>
+		<div transition:slide={{ duration: 500 }}>
 			<slot />
 		</div>
 	{/if}
@@ -30,17 +27,13 @@
 		@apply flex flex-col p-2 m-2;
 	}
 
-	.header {
+	header {
 		@apply flex flex-row items-center justify-start p-2 font-bold;
 		background-color: var(--text-color, theme('colors.gray.800'));
 		color: var(--background-color, theme('colors.gray.50'));
 	}
 
-	.chevron {
-		@apply m-1;
-	}
-
-	.content {
+	div {
 		@apply flex flex-col p-2 border border-solid w-full;
 		background-color: var(--background-color, theme('colors.gray.50'));
 		color: var(--text-color, theme('colors.gray.800'));

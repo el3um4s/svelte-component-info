@@ -17,3 +17,4 @@ info={infoSvelteComponents['SvelteInfo.svelte']}
 - [Text.svelte]({base}/test/text)
 - [PageTransition.svelte]({base}/test/page-transition)
 - [Header.svelte]({base}/test/header)
+- [Accordion.svelte]({base}/test/accordion)

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from './helpers/Section.svelte';
+	import Accordion from './helpers/Accordion.svelte';
 	import CodeBash from './helpers/CodeBash.svelte';
 	import CodeSvelte from './helpers/CodeSvelte.svelte';
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
@@ -25,7 +25,7 @@
 		</div>
 	{/if}
 
-	<Section title="How to use" open={true}>
+	<Accordion title="How to use" open={true}>
 		{#if urlPackage !== '-'}
 			<div>To import the package in a project:</div>
 			<CodeBash code="npm i -D {urlPackage}" />
@@ -34,10 +34,10 @@
 		<div>To use in a file:</div>
 
 		<CodeSvelte {urlPackage} {name} {info} />
-	</Section>
+	</Accordion>
 
 	{#if info && info.props.length > 0}
-		<Section title="Props" open={false}>
+		<Accordion title="Props" open={false}>
 			<div class="table">
 				<span class="table-header">Name</span>
 				<span class="table-header">Type</span>
@@ -49,11 +49,11 @@
 					<span class={prop.defaultValue ? '' : 'undefined'}>{prop.defaultValue}</span>
 				{/each}
 			</div>
-		</Section>
+		</Accordion>
 	{/if}
 
 	{#if info && info.actions.length > 0}
-		<Section title="Actions" open={false}>
+		<Accordion title="Actions" open={false}>
 			<div class="list-actions">
 				<ul>
 					{#each info.actions as action}
@@ -61,7 +61,7 @@
 					{/each}
 				</ul>
 			</div>
-		</Section>
+		</Accordion>
 	{/if}
 </section>
 

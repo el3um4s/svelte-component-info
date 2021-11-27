@@ -3,8 +3,6 @@
 	export let onClick = () => {
 		open = !open;
 	};
-
-	// https://github.com/jmagrippis/svelte-hamburger/blob/main/src/lib/AnimatedHamburger.svelte
 </script>
 
 <button on:click={onClick}>
