@@ -44,6 +44,18 @@
 		background-color: var(--background-color, theme('colors.gray.50'));
 		border-color: var(--text-color, theme('colors.gray.800'));
 	}
+
+	p:not(:last-child) {
+		@apply mb-4;
+	}
+
+	a {
+		@apply border border-dotted box-border;
+		border-bottom-color: var(--text-color, theme('colors.gray.800'));
+	}
+	a:hover {
+		border-color: var(--text-color, theme('colors.gray.800'));
+	}
 }
 
 @layer components {

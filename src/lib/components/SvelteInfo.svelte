@@ -1,8 +1,13 @@
 <script lang="ts">
-	import Accordion from './helpers/Accordion.svelte';
-	import CodeBash from './helpers/CodeBash.svelte';
-	import CodeSvelte from './helpers/CodeSvelte.svelte';
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
+
+	import Accordion from './helpers/Accordion.svelte';
+	import Name from './helpers/name.svelte';
+	import Description from './helpers/Description.svelte';
+	import HowToUse from './helpers/HowToUse.svelte';
+	import Props from './helpers/Props.svelte';
+	import Actions from './helpers/Actions.svelte';
+
 	export let name: string;
 	export let description: string = '-';
 	export let info: SvelteInformations;
@@ -15,52 +20,23 @@
 	$: name = name || undefined;
 </script>
 
-<section>
-	{#if name}
-		<h1>{name}</h1>
-	{/if}
-	{#if description !== '-'}
-		<div data-testid="description">
-			<i>{description}</i>
-		</div>
-	{/if}
+<section class={className}>
+	<Name {name} />
+	<Description {description} />
 
-	<Accordion title="How to use" open={true}>
-		{#if urlPackage !== '-'}
-			<div>To import the package in a project:</div>
-			<CodeBash code="npm i -D {urlPackage}" />
-		{/if}
-
-		<div>To use in a file:</div>
-
-		<CodeSvelte {urlPackage} {name} {info} />
-	</Accordion>
-
-	{#if info && info.props.length > 0}
-		<Accordion title="Props" open={false}>
-			<div class="table">
-				<span class="table-header">Name</span>
-				<span class="table-header">Type</span>
-				<span class="table-header">Default</span>
-
-				{#each info.props as prop}
-					<span>{prop.name}</span>
-					<span class={prop.type ? '' : 'undefined'}>{prop.type}</span>
-					<span class={prop.defaultValue ? '' : 'undefined'}>{prop.defaultValue}</span>
-				{/each}
-			</div>
+	{#if $$slots.about}
+		<Accordion title="About">
+			<slot name="about" />
 		</Accordion>
 	{/if}
 
-	{#if info && info.actions.length > 0}
-		<Accordion title="Actions" open={false}>
-			<div class="list-actions">
-				<ul>
-					{#each info.actions as action}
-						<li class="list-of-actions-name">on:<span>{action.name}</span></li>
-					{/each}
-				</ul>
-			</div>
+	<HowToUse {urlPackage} {name} {info} />
+	<Props {info} />
+	<Actions {info} />
+
+	{#if $$slots.test}
+		<Accordion title="Tests" open={false}>
+			<slot name="test" />
 		</Accordion>
 	{/if}
 </section>
@@ -84,26 +60,5 @@
 
 	section {
 		@apply w-full;
-	}
-	.table {
-		@apply grid grid-cols-3;
-	}
-
-	.table > span {
-		@apply pt-2 pb-2 pr-1 pl-1;
-		border-bottom: 1px solid var(--text-color, theme('colors.gray.800'));
-	}
-
-	.table > span.table-header {
-		@apply font-bold;
-	}
-
-	.table > span.undefined {
-		background-color: var(--text-color, theme('colors.gray.800'));
-		color: var(--background-color, theme('colors.gray.50'));
-	}
-
-	.list-of-actions-name span {
-		@apply font-bold;
 	}
 </style>
