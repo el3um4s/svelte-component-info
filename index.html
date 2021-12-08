@@ -8,18 +8,18 @@
 
 		
 
-		<link rel="modulepreload" href="/svelte-component-info/_app/start-60423767.js">
-		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/vendor-2a94d0a0.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/start-0f9a6464.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/vendor-90320fc7.js">
 		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/svelte-component-info/_app/pages/__layout.svelte-54599f25.js">
-		<link rel="modulepreload" href="/svelte-component-info/_app/pages/index.md-ed445941.js">
-		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/SvelteInfo-e04bb9e6.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/pages/__layout.svelte-021763e2.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/pages/index.md-230f790d.js">
+		<link rel="modulepreload" href="/svelte-component-info/_app/chunks/SvelteInfo-ee266f37.js">
 		<link rel="stylesheet" href="/svelte-component-info/_app/assets/start-464e9d0a.css">
-		<link rel="stylesheet" href="/svelte-component-info/_app/assets/pages/__layout.svelte-742cd370.css">
-		<link rel="stylesheet" href="/svelte-component-info/_app/assets/SvelteInfo-7e594561.css">
+		<link rel="stylesheet" href="/svelte-component-info/_app/assets/pages/__layout.svelte-fb07c79a.css">
+		<link rel="stylesheet" href="/svelte-component-info/_app/assets/SvelteInfo-aabf8666.css">
 
 		<script type="module">
-			import { start } from "/svelte-component-info/_app/start-60423767.js";
+			import { start } from "/svelte-component-info/_app/start-0f9a6464.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"/svelte-component-info","assets":""},
@@ -32,8 +32,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/svelte-component-info/_app/pages/__layout.svelte-54599f25.js"),
-						import("/svelte-component-info/_app/pages/index.md-ed445941.js")
+						import("/svelte-component-info/_app/pages/__layout.svelte-021763e2.js"),
+						import("/svelte-component-info/_app/pages/index.md-230f790d.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -51,19 +51,27 @@
 
 <header class="svelte-dkcntm"><div class="svelte-dkcntm"><a href="//undefined/svelte-component-info" class="svelte-dkcntm invisible">Home</a><a href="https://github.com/el3um4s/svelte-component-info" class="svelte-dkcntm">GitHub</a><a href="https://www.npmjs.com/package/@el3um4s/svelte-component-info" class="svelte-dkcntm">NPM</a></div>
 </header>
-<main><div class="main-center"><section class="svelte-hv42zv"><h1 class="svelte-hv42zv">SvelteInfo</h1>
-	<div data-testid="description" class="svelte-hv42zv"><i class="svelte-hv42zv">A Svelte Component to show info about Svelte Components</i></div>
+<main><div class="main-center"><section class=" svelte-yzliv3"><h1>SvelteInfo</h1>
+	<div><i>A Svelte Component to show info about Svelte Components</i></div>
+
+	<section class="svelte-6xg35u"><header class="svelte-6xg35u"><button class="svelte-1cmzbrg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="svelte-1cmzbrg open"><path d="M19 9l-7 7-7-7"></path></svg>
+</button>
+		About</header>
+	<div class="svelte-6xg35u"><span slot="about"><p>Show information about the properties of a Svelte component. Designed to simplify the creation of documentation - WIP</p>
+<p>NPM link: <a href="https://www.npmjs.com/package/@el3um4s/svelte-component-info" rel="nofollow">@el3um4s/svelte-component-info</a></p>
+<p>I recommend using it with <a href="https://github.com/el3um4s/svelte-get-component-info" rel="nofollow">el3um4s/svelte-get-component-info</a></p></span></div>
+</section>
 
 	<section class="svelte-6xg35u"><header class="svelte-6xg35u"><button class="svelte-1cmzbrg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="svelte-1cmzbrg open"><path d="M19 9l-7 7-7-7"></path></svg>
 </button>
 		How to use</header>
-	<div class="svelte-6xg35u"><div class="svelte-hv42zv">To import the package in a project:</div>
-			<div class="svelte-1ki1g3x">npm i -D @el3um4s/svelte-info
+	<div class="svelte-6xg35u"><div>To import the package in a project:</div>
+		<div class="svelte-1ki1g3x">npm i -D @el3um4s/svelte-info
 </div>
 
-		<div class="svelte-hv42zv">To use in a file:</div>
+	<div>To use in a file:</div>
 
-		<div class="svelte-1d7i6f2"><div class="svelte-1pkq5y3"><span class="tag svelte-1pkq5y3">&lt;script&gt;</span>
+	<div class="svelte-1d7i6f2"><div class="svelte-1pkq5y3"><span class="tag svelte-1pkq5y3">&lt;script&gt;</span>
 	<p class="svelte-1pkq5y3">import { <span class="import svelte-1pkq5y3">SvelteInfo</span>
 		} from
 		<span class="import svelte-1pkq5y3">&quot;@el3um4s/svelte-info&quot;</span>;
@@ -76,25 +84,31 @@
 		<ul><li class="svelte-rwt77q">{ <span class="prop svelte-rwt77q">name</span> }</li><li class="svelte-rwt77q">{ <span class="prop svelte-rwt77q">description</span> }</li><li class="svelte-rwt77q">{ <span class="prop svelte-rwt77q">info</span> }</li><li class="svelte-rwt77q">{ <span class="prop svelte-rwt77q">urlPackage</span> }</li>
 			</ul>
 
-		<span class="tag svelte-rwt77q">/&gt;</span>
+		<span class="tag svelte-rwt77q">&gt;</span>
+			<p class="svelte-rwt77q"><span class="tag svelte-rwt77q">&lt;div <span class="slot svelte-rwt77q">slot=&quot;about&quot;</span> &gt;</span>
+						Named slot
+						<span class="tag svelte-rwt77q">&lt;/div&gt;</span>
+				</p><p class="svelte-rwt77q"><span class="tag svelte-rwt77q">&lt;div <span class="slot svelte-rwt77q">slot=&quot;test&quot;</span> &gt;</span>
+						Named slot
+						<span class="tag svelte-rwt77q">&lt;/div&gt;</span>
+				</p>
+			<span class="tag svelte-rwt77q">&lt;/<span class="name svelte-rwt77q">SvelteInfo</span>&gt;</span>
 </div>
 </div></div>
 </section>
-
 	<section class="svelte-6xg35u"><header class="svelte-6xg35u"><button class="svelte-1cmzbrg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="svelte-1cmzbrg"><path d="M19 9l-7 7-7-7"></path></svg>
 </button>
 		Props</header>
 	
 </section>
+	
 
+	<section class="svelte-6xg35u"><header class="svelte-6xg35u"><button class="svelte-1cmzbrg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="svelte-1cmzbrg"><path d="M19 9l-7 7-7-7"></path></svg>
+</button>
+		Tests</header>
 	
 </section>
-<h3>Test</h3>
-<ul><li><a href="/svelte-component-info/test/hello">Hello.svelte</a></li>
-<li><a href="/svelte-component-info/test/text">Text.svelte</a></li>
-<li><a href="/svelte-component-info/test/page-transition">PageTransition.svelte</a></li>
-<li><a href="/svelte-component-info/test/header">Header.svelte</a></li>
-<li><a href="/svelte-component-info/test/accordion">Accordion.svelte</a></li></ul></div></main>
+</section></div></main>
 
 
 
