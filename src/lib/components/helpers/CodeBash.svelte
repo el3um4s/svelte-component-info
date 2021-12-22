@@ -1,10 +1,12 @@
 <script lang="ts">
-	export let code: string = '';
+	export let code: string;
 </script>
 
-<div>
-	{code}
-</div>
+{#if code}
+	<div>
+		{code}
+	</div>
+{/if}
 
 <style lang="postcss">
 	div {

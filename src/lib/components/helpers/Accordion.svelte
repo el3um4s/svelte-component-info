@@ -16,7 +16,7 @@
 		{title}
 	</header>
 	{#if open}
-		<div transition:slide={{ duration: 500 }}>
+		<div transition:slide={{ duration: 500 }} data-testid="accordion-open">
 			<slot />
 		</div>
 	{/if}

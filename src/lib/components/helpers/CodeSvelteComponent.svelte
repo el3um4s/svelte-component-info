@@ -10,9 +10,9 @@
 	const bracesOpen: string = '{';
 	const bracesClose: string = '}';
 
-	const hasProps: boolean = info.props.length > 0;
-	const hasActions: boolean = info.actions.length > 0;
-	const hasSlots: boolean = info.slots.length > 0;
+	const hasProps: boolean = info?.props.length > 0;
+	const hasActions: boolean = info?.actions.length > 0;
+	const hasSlots: boolean = info?.slots.length > 0;
 	const hasAdditionalInfo: boolean = hasProps || hasActions;
 </script>
 
