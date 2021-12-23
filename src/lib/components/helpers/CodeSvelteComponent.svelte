@@ -20,7 +20,7 @@
 	{#if hasAdditionalInfo}
 		<span class="tag">{brackesOpen}<span class="name">{name}</span></span>
 
-		<ul>
+		<ul data-testid="props-actions">
 			{#each info.props as prop}
 				<li>{bracesOpen} <span class="prop">{prop.name}</span> {bracesClose}</li>
 			{/each}
@@ -31,26 +31,30 @@
 
 		{#if hasSlots}
 			<span class="tag">{brackesClose}</span>
-			{#each info.slots as slot}
-				<p>
-					{#if slot.anonymous}
-						<span class="tag">{brackesOpen}div{brackesClose}</span> Slot anonymous
-						<span class="tag">{brackesOpen}/div{brackesClose}</span>
-					{:else}
-						<span class="tag"
-							>{brackesOpen}div <span class="slot">slot="{slot.name}"</span> {brackesClose}</span
-						>
-						Named slot
-						<span class="tag">{brackesOpen}/div{brackesClose}</span>
-					{/if}
-				</p>
-			{/each}
+			<span data-testid="slots">
+				{#each info.slots as slot}
+					<p>
+						{#if slot.anonymous}
+							<span class="tag">{brackesOpen}div{brackesClose}</span> Slot anonymous
+							<span class="tag">{brackesOpen}/div{brackesClose}</span>
+						{:else}
+							<span class="tag"
+								>{brackesOpen}div <span class="slot">slot="{slot.name}"</span> {brackesClose}</span
+							>
+							Named slot
+							<span class="tag">{brackesOpen}/div{brackesClose}</span>
+						{/if}
+					</p>
+				{/each}
+			</span>
 			<span class="tag">{brackesOpen}/<span class="name">{name}</span>{brackesClose}</span>
 		{:else}
 			<span class="tag"> /{brackesClose}</span>
 		{/if}
 	{:else}
-		<span class="tag">{brackesOpen}<span class="name">{name}</span> /{brackesClose}</span>
+		<span class="tag" data-testid="only-name"
+			>{brackesOpen}<span class="name">{name}</span> /{brackesClose}</span
+		>
 	{/if}
 </div>
 

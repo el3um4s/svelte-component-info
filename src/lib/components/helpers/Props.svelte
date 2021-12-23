@@ -1,26 +1,19 @@
 <script lang="ts">
-	import Accordion from './Accordion.svelte';
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
 	export let info: SvelteInformations;
-
-	let hasProps = info?.props.length > 0;
 </script>
 
-{#if hasProps}
-	<Accordion title="Props" open={false}>
-		<div class="table">
-			<span class="table-header">Name</span>
-			<span class="table-header">Type</span>
-			<span class="table-header">Default</span>
+<div class="table" data-testid="props">
+	<span class="table-header">Name</span>
+	<span class="table-header">Type</span>
+	<span class="table-header">Default</span>
 
-			{#each info.props as prop}
-				<span>{prop.name}</span>
-				<span class={prop.type ? '' : 'undefined'}>{prop.type}</span>
-				<span class={prop.defaultValue ? '' : 'undefined'}>{prop.defaultValue}</span>
-			{/each}
-		</div>
-	</Accordion>
-{/if}
+	{#each info.props as prop}
+		<span>{prop.name}</span>
+		<span class={prop.type ? '' : 'undefined'}>{prop.type}</span>
+		<span class={prop.defaultValue ? '' : 'undefined'}>{prop.defaultValue}</span>
+	{/each}
+</div>
 
 <style lang="postcss">
 	.table {

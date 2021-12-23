@@ -2,7 +2,7 @@
 	import type { SvelteInformations } from '@el3um4s/svelte-get-component-info';
 
 	import Accordion from './helpers/Accordion.svelte';
-	import Name from './helpers/name.svelte';
+	import Name from './helpers/Name.svelte';
 	import Description from './helpers/Description.svelte';
 	import HowToUse from './helpers/HowToUse.svelte';
 	import Props from './helpers/Props.svelte';
@@ -18,6 +18,9 @@
 	$: className = className || '';
 
 	$: name = name || undefined;
+
+	const hasActions = info?.actions.length > 0;
+	const hasProps = info?.props.length > 0;
 </script>
 
 <section class={className}>
@@ -30,9 +33,21 @@
 		</Accordion>
 	{/if}
 
-	<HowToUse {urlPackage} {name} {info} />
-	<Props {info} />
-	<Actions {info} />
+	<Accordion title="How to use" open={true}>
+		<HowToUse {urlPackage} {name} {info} />
+	</Accordion>
+
+	{#if hasProps}
+		<Accordion title="Props" open={false}>
+			<Props {info} />
+		</Accordion>
+	{/if}
+
+	{#if hasActions}
+		<Accordion title="Actions" open={false}>
+			<Actions {info} />
+		</Accordion>
+	{/if}
 
 	{#if $$slots.test}
 		<Accordion title="Tests" open={false}>
