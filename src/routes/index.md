@@ -7,7 +7,7 @@
 <SvelteInfo
 name="SvelteInfo"
 description="A Svelte Component to show info about Svelte Components"
-urlPackage="@el3um4s/svelte-info"
+urlPackage="@el3um4s/svelte-component-info"
 info={infoSvelteComponents['SvelteInfo.svelte']}>
 
 <span slot="about">

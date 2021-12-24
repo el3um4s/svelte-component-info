@@ -1,8 +1,9 @@
 # SVELTE COMPONENT INFO
 
-Show information about the properties of a Svelte component. Designed to simplify the creation of documentation - **WIP**
+Show information about the properties of a Svelte component. Designed to simplify the creation of documentation
 
 NPM link: [@el3um4s/svelte-component-info](https://www.npmjs.com/package/@el3um4s/svelte-component-info)
+Documentation: [el3um4s.github.io/svelte-component-info](https://el3um4s.github.io/svelte-component-info/)
 
 ### Install and use the package
 
