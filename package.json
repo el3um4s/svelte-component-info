@@ -1,6 +1,6 @@
 {
 	"name": "@el3um4s/svelte-component-info",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"description": "Show information about the properties of a Svelte component. Designed to simplify the creation of documentation",
 	"repository": {
 		"type": "git",
