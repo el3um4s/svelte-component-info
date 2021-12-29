@@ -3,7 +3,7 @@
  */
 
 import { render } from '@testing-library/svelte';
-import HowToUSe from '../../lib/components/helpers/HowToUSe.svelte';
+import HowToUSe from '../../lib/components/helpers/HowToUse.svelte';
 
 const infoNull = { "props": [], "actions": [], "slots": [] };
 

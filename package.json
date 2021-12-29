@@ -52,7 +52,7 @@
 		"get-info-test-svelte-components": "node getInfoTestSvelteComponents.js"
 	},
 	"devDependencies": {
-		"@el3um4s/svelte-get-component-info": "^0.0.14",
+		"@el3um4s/svelte-get-component-info": "^0.0.16",
 		"@playwright/test": "^1.17.1",
 		"@sveltejs/adapter-static": "^1.0.0-next.21",
 		"@sveltejs/kit": "next",

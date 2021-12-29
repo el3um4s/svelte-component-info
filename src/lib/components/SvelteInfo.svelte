@@ -7,6 +7,7 @@
 	import HowToUse from './helpers/HowToUse.svelte';
 	import Props from './helpers/Props.svelte';
 	import Actions from './helpers/Actions.svelte';
+	import CSSVariables from './helpers/CSSVariables.svelte';
 
 	export let name: string;
 	export let description: string = '-';
@@ -21,6 +22,7 @@
 
 	const hasActions = info?.actions.length > 0;
 	const hasProps = info?.props.length > 0;
+	const hasCSSVariables = info?.css.length > 0;
 </script>
 
 <section class={className}>
@@ -46,6 +48,12 @@
 	{#if hasActions}
 		<Accordion title="Actions" open={false}>
 			<Actions {info} />
+		</Accordion>
+	{/if}
+
+	{#if hasCSSVariables}
+		<Accordion title="CSS Variables" open={false}>
+			<CSSVariables {info} />
 		</Accordion>
 	{/if}
 

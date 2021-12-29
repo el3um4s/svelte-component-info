@@ -30,7 +30,7 @@ const config = {
 			fallback: null
 		}),
 		paths: {
-			// base: '/svelte-component-info'
+			base: '/svelte-component-info'
 		}
 	}
 };
