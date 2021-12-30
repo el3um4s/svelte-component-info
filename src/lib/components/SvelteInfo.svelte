@@ -35,6 +35,12 @@
 		</Accordion>
 	{/if}
 
+	{#if $$slots.demo}
+		<Accordion title="Demo">
+			<slot name="demo" />
+		</Accordion>
+	{/if}
+
 	<Accordion title="How to use" open={true}>
 		<HowToUse {urlPackage} {name} {info} />
 	</Accordion>
